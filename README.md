@@ -6,7 +6,7 @@ Steps to run the application
 2. Clone this repository
 3. From command prompt, go to Backend directory from the cloned folder and run "npm install" and then run "npm start"
 4. The above command runs the bacjend nodejs server
-5. Now go to Frontend folder and then run "ng serve --port 8081"
+5. Now go to Frontend folder and then run "npm install" and followed by "ng serve --port 8081"
 6. The above command runs the frontend angular application
 7. Now go to browser and browse url: http://localhost:8081/
 
