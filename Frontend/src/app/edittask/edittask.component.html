@@ -1,0 +1,38 @@
+<br>
+<br>
+<br>
+
+<div class="main">
+  <h2 class="text-center">Update Task</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="taskname">Task Name: </label>
+      <input type="taskname" formControlName="taskname" name="taskname" class="form-control" id="taskname"
+        value={{tasks.taskname}}>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="taskdesc">Task Description: </label>
+      <input type="taskdesc" value={{tasks.taskdesc}} formControlName="taskdesc" placeholder="taskdesc" name="taskdesc"
+        class="form-control" id="taskdesc" readonly="true">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="category">Category Name: </label>
+      <input type="category" value={{tasks.category}} formControlName="category" placeholder="category" name="category"
+        class="form-control" id="category" readonly="true">
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label for="category">Status:</label>
+      <input id="checkbox" value={{tasks.status}} (change)="checkValue($event.target.checked)" type="checkbox"
+        formControlName="status" value="true" ngModel required>
+      <label for="category" style="margin-left: auto;">Complete</label>
+    </div>
+    <br>
+
+    <button class="btn">Update</button>
+  </form>
+</div>

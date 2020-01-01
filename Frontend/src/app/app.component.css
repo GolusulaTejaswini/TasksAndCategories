@@ -1,0 +1,20 @@
+#navbar{
+    align-content: center;
+    align-items: center;
+    margin-left: 900px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: inherit;
+    font-weight: 900;
+    margin-top: 100px;
+}
+button{
+    font-size: 50px;
+    background-color:yellow;
+        cursor:pointer;
+        height: 70px;
+        width: 500px;
+}
+a{
+    color: white;
+}

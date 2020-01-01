@@ -1,0 +1,64 @@
+<br>
+<br>
+<br>
+<div class="col-md-6 user-container">
+  <h2> Tasks List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Category</th>
+        <th><select (change)="sortByStatus($event.target.value)">
+            <option value="">Status</option>
+            <option value=true>Complete
+            </option>
+            <option value=false>In-progress
+            </option>
+            <option value="all">All
+            </option>
+
+          </select>
+        </th>
+        <th><select (change)="sortByDate($event.target.value)">
+            <option value="">Created On</option>
+            <option value="bydate">SortByDate
+            </option>
+          </select>
+        </th>
+
+        <th>Operations</th>
+        <th>Adding Task To Category</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of htmltasks">
+        <td> {{task.taskname}}</td>
+        <td>{{task.category}}</td>
+        <td *ngIf="task.status==true">Complete</td>
+        <td *ngIf="task.status!=true">In-Progress</td>
+        <td>{{task.date|date: 'dd/MM/yyyy'}}</td>
+
+        <td>
+          <button class="delbtn" (click)="deleteTask(task)"> Delete Task</button>
+          <button class="editbtn" (click)="editTask(task)">
+            Edit Task</button>
+        </td>
+        <td *ngIf="task.category==''">
+          <select (change)="addTaskCategory($event.target.value,task)">
+            <option value="">Add Task to Category</option>
+            <option *ngFor="let category of categories" value={{category.categoryName}}>
+              {{category.categoryName}}
+            </option>
+          </select>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <p>Want to add new task then click below button</p>
+  <button class="btn" (click)="addTask()">Create New Task</button>
+
+</div>

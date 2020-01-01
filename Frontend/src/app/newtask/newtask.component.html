@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+
+<div class="main">
+  <h2 class="text-center">Create New Task</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="taskname">Task Name: </label>
+      <input type="taskname" formControlName="taskname" placeholder="Task Name" name="taskname" class="form-control"
+        id="taskname">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="taskdesc">Task Description: </label>
+      <input type="taskdesc" formControlName="taskdesc" placeholder="Task Description" name="taskdesc"
+        class="form-control" id="taskdesc">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="category">Category Name: </label>
+      <select formControlName="category">
+        <option value="">Select Category</option>
+        <option *ngFor="let category of categories" value={{category.categoryName}}>{{category.categoryName}}
+        </option>
+      </select>
+    </div>
+    <br>
+    <button class="btn">Create</button>
+  </form>
+</div>

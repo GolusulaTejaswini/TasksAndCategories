@@ -1,0 +1,15 @@
+<br>
+<br>
+<br>
+<div class="main">
+  <h2 class="text-center">Edit Category Name</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="category">Category Name: </label>
+      <input type="category" value={{category.categoryName}} formControlName="category"
+        placeholder="Enter New Category Name" name="category" class="form-control" id="category">
+    </div>
+    <br>
+    <button class="btn">Update</button>
+  </form>
+</div>

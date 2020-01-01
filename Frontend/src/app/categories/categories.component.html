@@ -1,0 +1,81 @@
+<br>
+<br>
+<br>
+<div class="col-md-6 user-container">
+  <h2> Categories List </h2>
+  <br>
+  <!--<div *ngFor="let category of categories">
+  {{category.categoryName}}
+    <button class="btn btn-success" (click)="deleteCategory(category)">Delete</button>
+      <button class="btn btn-success" (click)="editCategory(category)" style="margin-left: 20px;">
+         Edit </button>
+          <div *ngFor="let task of category.tasks">
+              {{task}}  
+          </div>  
+        </div>-->
+  <!-- <table class="table">
+            <thead>
+                <tr >
+                    <th *ngFor="let category of categories"> {{category.categoryName}}
+                        <button class="delbtn" (click)="deleteCategory(category)">Delete</button>
+                        <button class="editbtn" (click)="editCategory(category)" style="margin-left: 20px;">
+                           Rename Category</button>
+                  
+                        </th>
+        </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td *ngFor="let category of categories">
+              <ng-container *ngFor="let task of category.tasks"> {{task}}<br>
+                </ng-container>
+
+              </td>
+            </tr>
+            </tbody>
+          </table>  -->
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Categories with tasks</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let category of categories">
+        <tr>
+          <td id="catname">{{category.categoryName}}</td>
+          <td id="catname">
+            <button class="delbtn" (click)="deleteCategory(category)">Delete</button>
+            <button class="editbtn" (click)="editCategory(category)" style="margin-left: 20px;">
+              Rename</button>
+          </td>
+        </tr>
+        <tr *ngFor="let task of category.tasks">
+          <td id="tasks">{{task}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <p>Want to add new category then click below button</p>
+
+  <button class="btn" (click)="addCategory()">Create New Category</button>
+
+
+</div>

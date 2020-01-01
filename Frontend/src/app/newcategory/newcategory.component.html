@@ -1,0 +1,23 @@
+<br>
+<br>
+<br>
+
+<div class="main">
+  <h2 class="text-center">Create New Category</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="categoryName">Category Name: </label>
+      <input type="categoryName" formControlName="categoryName" placeholder="Category Name" name="categoryName"
+        class="form-control" id="categoryName">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="categoryDesc">Task Description: </label>
+      <input type="categoryDesc" formControlName="categoryDesc" placeholder="Category Description" name="categoryDesc"
+        class="form-control" id="categoryDesc">
+    </div>
+    <br>
+
+    <button class="btn">Create</button>
+  </form>
+</div>
